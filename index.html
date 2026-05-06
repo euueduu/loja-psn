@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SymbolForge Studio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.price {
+    font-size: 22px;
+    color: #00ff99;
+    margin: 10px 0;
+}
+
+button {
+    background: #00ff99;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00cc77;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>SymbolForge Studio</header>
+
+<section class="hero">
+    <h1>Destaque seu perfil na PSN</h1>
+    <p>Personalização com símbolos exclusivos</p>
+</section>
+
+<section class="products">
+
+<div class="card">
+    <h3>Pacote Básico</h3>
+    <p>5 símbolos</p>
+    <div class="price">R$10</div>
+    <button onclick="pagar('https://mpago.la/1DsS5vT', 'Pacote Básico')">Pagar</button>
+</div>
+
+<div class="card">
+    <h3>Pacote Premium</h3>
+    <p>10 símbolos</p>
+    <div class="price">R$18</div>
+    <button onclick="pagar('https://mpago.la/1LNSGyA', 'Pacote Premium')">Pagar</button>
+</div>
+
+<div class="card">
+    <h3>Pacote Ultra</h3>
+    <p>20 símbolos</p>
+    <div class="price">R$30</div>
+    <button onclick="pagar('https://mpago.la/1xWa9Fk', 'Pacote Ultra')">Pagar</button>
+</div>
+
+</section>
+
+<footer>
+© 2026 SymbolForge Studio
+</footer>
+
+<script>
+function pagar(link, produto) {
+    let numero = "5567992328083";
+
+    let mensagem = encodeURIComponent(
+        "Olá, já realizei o pagamento do " + produto + 
+        ". Seguem meus dados:%0AID PSN:%0ASímbolos desejados:"
+    );
+
+    window.location.href = link;
+
+    setTimeout(() => {
+        window.open("https://wa.me/" + numero + "?text=" + mensagem, "_blank");
+    }, 5000);
+}
+</script>
+
+</body>
+</html>
